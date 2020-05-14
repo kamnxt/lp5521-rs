@@ -89,7 +89,6 @@ where
     }
 
     pub fn write_reg(&mut self, values: &[u8]) -> Result<(), Error<E>> {
-        println!("W: {:?}", values);
         self.i2c.write(self.address, values).map_err(Error::I2C)
     }
 }
